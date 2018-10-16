@@ -1,0 +1,17 @@
+<p>
+  <%= link_to "Printable Receipt (PDF)", order_path(@order, format: 'pdf') %>
+</p>
+<li>
+  <%= link_to "CSV", order_path(@order.id, format: "csv") %>
+</li>
+<table id="line_items">
+  <tr>
+    <th>Name order</th>
+    <th>Name item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <%= render partial: "orders/line_item",  collection: @line_items, as: "line_item" %>
+</table>  
+
+<h2>Import Products</h2>
